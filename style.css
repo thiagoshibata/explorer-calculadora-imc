@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-size: 62.5%;
+
+  /* variáveis de cores */
+
+  --bk-app: #040924;
+  --bk-card: #fff;
+  --color-title: #0c3440;
+  --bk-input: #dce2e9;
+  --color-input-focus:#02799D;
+  --bk-btn: #02799d;
+  --bk-btn-hover: #016a8a;
+
+
+
+}
+body,
+input,
+button {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: var(--bk-app);
+  font-size: 1.6rem;
+}
+
+.container {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  padding: 1.6rem;
+}
+
+.card {
+  background-color: var(--bk-card);
+  display: flex;
+  flex-direction: column;
+
+  margin-top: -12rem;
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+  gap: 3.2rem;
+
+  border-radius: 0.6rem;
+  box-shadow: 0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  color: var(--color-title);
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 4rem;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.6rem;
+}
+
+.input-wrapper label {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+}
+.input-wrapper input {
+  background-color: var(--bk-input);
+  width: 100%;
+  border-radius: 0.4rem;
+  border: 0.1rem solid rgba(73, 80, 87, 0.3);
+  padding: 1.6rem;
+  font-synthesis: 2rem;
+}
+.input-wrapper input:focus{
+  outline: .1rem solid var(--color-input-focus);
+}
+
+button {
+  width: 100%;
+  padding: 1.6rem;
+  margin-top: 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  border-radius: 0.4rem;
+  border: none;
+
+  color: white;
+  background-color: var(--bk-btn);
+
+  transform: background 0.3s;
+}
+button:hover {
+  background: var(--bk-btn-hover);
+  cursor: pointer;
+}
