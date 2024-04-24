@@ -12,12 +12,11 @@
   --bk-card: #fff;
   --color-title: #0c3440;
   --bk-input: #dce2e9;
-  --color-input-focus:#02799D;
+  --color-input-focus: #02799d;
   --bk-btn: #02799d;
   --bk-btn-hover: #016a8a;
-
-
-
+  --tt-error: #fff;
+  --bk-error: #f03e3e;
 }
 body,
 input,
@@ -39,10 +38,11 @@ body {
 
 .card {
   background-color: var(--bk-card);
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
+  max-width: 42.8rem;
 
-  margin-top: -12rem;
+  /* margin-top: -12rem; */
   padding: 4.8rem 6.4rem 6.4rem 6.4rem;
   gap: 3.2rem;
 
@@ -77,11 +77,16 @@ body {
   padding: 1.6rem;
   font-synthesis: 2rem;
 }
-.input-wrapper input:focus{
-  outline: .1rem solid var(--color-input-focus);
+.input-wrapper input:focus {
+  outline: 0.1rem solid var(--color-input-focus);
 }
 
-button {
+form button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+
   width: 100%;
   padding: 1.6rem;
   margin-top: 1.6rem;
@@ -96,7 +101,80 @@ button {
 
   transform: background 0.3s;
 }
-button:hover {
+form button:hover {
   background: var(--bk-btn-hover);
   cursor: pointer;
+}
+
+/* --MODAL */
+
+/* classe para ficar visível */
+.modal-wrapper.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-wrapper {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+
+  inset: 0;
+  /* 
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  OU inset: 0;
+  */
+
+  display: grid;
+  place-content: center;
+
+  /* ficará oculta por padrão */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal {
+  position: relative;
+}
+
+.close {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+.close:hover {
+  transform: scale(1.2);
+}
+
+/* -- ALERT ERROR */
+.alert-error.open {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+.alert-error {
+  background: var(--bk-error);
+  color: var(--tt-error);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 0.8rem;
+  font-weight: 700;
+  line-height: 2rem;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transform: translateY(-40px);
+  transition: transform 0.5s;
 }
